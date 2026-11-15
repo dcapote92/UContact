@@ -1,0 +1,27 @@
+@startuml
+
+class Client{
+    - id: UUID
+    - name: String
+}
+
+class Organization{
+    - id: UUID
+    - name: String
+    - contactList<Contact>
+}
+
+class Contact{
+    - id: UUID
+    - name: String
+    - email: String
+    - phone: String?
+}
+
+Client "1" -- "*" Organization
+Organization "1" -- "*" Contact
+
+
+
+
+@enduml
