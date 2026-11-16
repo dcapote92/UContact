@@ -8,7 +8,6 @@ class Client{
 class Organization{
     - id: UUID
     - name: String
-    - contactList<Contact>
 }
 
 class Contact{
@@ -18,9 +17,15 @@ class Contact{
     - phone: String?
 }
 
-Client "1" -- "*" Organization
-Organization "1" -- "*" Contact
+Client "1" *-- "0..*" Organization
+Organization "1" *-- "0..*" Contact
 
+note on link
+    Uma organização só pode ser excluída
+    quando não posuir contatos associados.
+    Os contatos deve ser excluidos
+    ou transferidos previamente.
+end note
 
 
 
