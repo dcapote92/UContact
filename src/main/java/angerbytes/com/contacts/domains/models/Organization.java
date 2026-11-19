@@ -1,46 +1,46 @@
-package angerbytes.com.contacts.domain.model;
+package angerbytes.com.contacts.domains.models;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Client {
+public class Organization {
     private final UUID id;
     private String name;
-    private List<Organization> orgs;
+    private List<Contact> contacts;
 
-    public Client(String name) {
+    public Organization(String name) {
         this.id = UUID.randomUUID();
         this.name = name;
-        this.orgs = new ArrayList<>();
+        this.contacts = new ArrayList<>();
     }
 
     public UUID getId() {
-        return this.id;
+        return id;
     }
 
-    public String getName(){
-        return this.name;
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public List<Organization> getOrgs() {
-        return orgs;
+    public List<Contact> getContacts() {
+        return contacts;
     }
 
-    public void setOrgs(Organization org) {
-        this.orgs.add(org);
+    public void setContacts(Contact contact) {
+        this.contacts.add(contact);
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Client client = (Client) o;
-        return Objects.equals(id, client.id) && Objects.equals(name, client.name);
+        Organization that = (Organization) o;
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
+        return "Organization{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

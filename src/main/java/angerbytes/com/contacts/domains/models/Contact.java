@@ -1,4 +1,4 @@
-package angerbytes.com.contacts.domain.model;
+package angerbytes.com.contacts.domains.models;
 
 import java.util.Objects;
 import java.util.Optional;
